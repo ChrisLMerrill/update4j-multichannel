@@ -40,11 +40,13 @@ public abstract class UpdateLaunchBootstrap
             _settings.save();
             }
 
+        String channel = _settings.getSelectedChannel();
+        SimpleLogger.log("using release channel: " + channel);
+        System.setProperty("release.channel", channel);
+
         if (_settings.skipUpdateCheck())
             {
             SimpleLogger.log("Skipping update check (due to configuration setting).");
-            String channel = _settings.getSelectedChannel();
-            System.setProperty("release.channel", channel);
             File config_file = new File(_settings.getSettingsFolder(), "channel/" + channel + ".xml");
             Configuration config = CheckForUpdates.loadConfig(config_file);
             if (config != null)
