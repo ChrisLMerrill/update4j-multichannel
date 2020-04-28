@@ -43,6 +43,7 @@ public abstract class UpdateLaunchBootstrap
         String channel = _settings.getSelectedChannel();
         SimpleLogger.log("using release channel: " + channel);
         System.setProperty("release.channel", channel);
+        System.setProperty("release.channel.isDefault", Boolean.toString(channel.equals(_config.getAvailableReleaseChannelNames()[0])));
 
         if (_settings.skipUpdateCheck())
             {
