@@ -120,6 +120,6 @@ public abstract class BootstrapSettings
     protected static final String SUPPRESS_UI_PARAM = "suppress_ui";
     protected static final String SKIP_UPDATE_CHECK = "skip_update_check";
     protected static final String APP_CLASS_PARAM = "app_classname";
-    protected static final String URL_PARAM_BASE = "url.";
+    protected static final String URL_PARAM_BASE = "url_base";
     protected static final String APP_PARAMS = "params";
     }
